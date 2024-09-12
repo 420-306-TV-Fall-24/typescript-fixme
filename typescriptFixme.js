@@ -35,11 +35,11 @@ var Point = /** @class */ (function () {
     };
     return Point;
 }());
-// annotate `PointPerson` to use all properties of `Person` and then add the missing required property
 var PointPerson = /** @class */ (function () {
-    function PointPerson(name, age) {
+    function PointPerson(name, age, move) {
         this.name = name;
         this.age = age;
+        this.move = move;
     }
     return PointPerson;
 }());

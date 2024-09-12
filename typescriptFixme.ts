@@ -10,14 +10,13 @@ let unknownTypeVariable:any;
 var list:number[] = [1, 2, 3];
 
 // annotate the return type of this function
-function littleHorribleAlert() {
+function littleHorribleAlert(): void {
   alert("I am a little annoying box!!");
 }
 
-var f1 = function (i:number): number {
+var f1 = function (i: number): number {
   return i * i;
 };
-
 //change f4 to accept a string or a number as a parameter
 function f2(i:string|number):void {
   console.log("The value was " + i);
@@ -53,16 +52,26 @@ class Point {
 }
 
 // annotate `PointPerson` to use all properties of `Person` and then add the missing required property
+
+interface Person {
+  name: string;
+  age: number;
+  move: () => void;
+}
+
+
 class PointPerson implements Person {
   name: string;
   age: number;
   move: () => void;
-  constructor(name: string,age:number) {
+
+  constructor(name: string, age: number, move: () => void) {
     this.name = name;
     this.age = age;
-   
+    this.move = move; 
   }
 }
+
 
 // annotate this array
 var arrayOfAnyType: (number | string | boolean)[] = [1, "string", false];
